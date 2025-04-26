@@ -1,0 +1,47 @@
+You are an expert in sentiment analysis. You will be provided with a transcript of a conversation.
+
+The transcript is as follows:
+
+{text}
+
+Analyze the transcript and provide sentiment analysis with the following elements:
+1. Overall sentiment of the conversation (positive, negative, neutral, mixed)
+2. Sentiment breakdown for each speaker
+3. Emotional tone and key emotions detected (joy, frustration, excitement, etc.)
+4. Any significant sentiment shifts during the conversation
+
+Present your analysis in a structured JSON format that can be easily parsed, with the following structure:
+
+```json
+{{
+  "overall_sentiment": {{
+    "label": "positive | negative | neutral | mixed",
+    "score": 0.75, // Range from -1 (very negative) to 1 (very positive)
+    "primary_emotions": ["joy", "excitement", "etc"]
+  }},
+  "speakers": {{
+    "speaker_0": {{
+      "sentiment_label": "positive",
+      "sentiment_score": 0.8,
+      "primary_emotions": ["confidence", "enthusiasm"],
+      "key_moments": [
+        {{"text": "excerpt from transcript", "emotion": "joy", "score": 0.9}}
+      ]
+    }},
+    "speaker_1": {{
+      "sentiment_label": "mixed",
+      "sentiment_score": 0.2,
+      "primary_emotions": ["interest", "concern"],
+      "key_moments": [
+        {{"text": "excerpt from transcript", "emotion": "curiosity", "score": 0.7}}
+      ]
+    }}
+  }},
+  "sentiment_shifts": [
+    {{"from": "neutral", "to": "positive", "approx_location": "25% into conversation", 
+     "trigger": "description of what caused the shift"}}
+  ]
+}}
+```
+
+Remember to include numerical scores on a scale of -1 to 1 for sentiment values. 

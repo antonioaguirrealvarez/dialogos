@@ -1,0 +1,283 @@
+{
+  "conversation_length_seconds": 60.085545,
+  "speakers": {
+    "spk_0": {
+      "quintile_1": {
+        "time_range": "0.00-12.02s",
+        "dominant_emotion": "Awe",
+        "emotion_score": 0.25177369298958757,
+        "top_emotions": [
+          [
+            "Awe",
+            0.25177369298958757
+          ],
+          [
+            "Excitement",
+            0.24098735893755863
+          ],
+          [
+            "Surprise (positive)",
+            0.19990213651468913
+          ],
+          [
+            "Adoration",
+            0.1983989997847027
+          ],
+          [
+            "Admiration",
+            0.18568808097254125
+          ]
+        ]
+      },
+      "quintile_2": {
+        "time_range": "12.02-24.03s",
+        "dominant_emotion": "Joy",
+        "emotion_score": 0.6919531574406395,
+        "top_emotions": [
+          [
+            "Joy",
+            0.6919531574406395
+          ],
+          [
+            "Excitement",
+            0.39877051343298014
+          ],
+          [
+            "Adoration",
+            0.31959729873366577
+          ],
+          [
+            "Admiration",
+            0.2570792408645193
+          ],
+          [
+            "Ecstasy",
+            0.2532032688357643
+          ]
+        ]
+      }
+    },
+    "unknown": {
+      "quintile_1": {
+        "time_range": "0.00-12.02s",
+        "dominant_emotion": "Joy",
+        "emotion_score": 0.4227475964592747,
+        "top_emotions": [
+          [
+            "Joy",
+            0.4227475964592747
+          ],
+          [
+            "Surprise (positive)",
+            0.41019062274243767
+          ],
+          [
+            "Admiration",
+            0.3614814198305454
+          ],
+          [
+            "Adoration",
+            0.3439858786513513
+          ],
+          [
+            "Awe",
+            0.3308594902221408
+          ]
+        ]
+      },
+      "quintile_2": {
+        "time_range": "12.02-24.03s",
+        "dominant_emotion": "Distress",
+        "emotion_score": 0.24595903843018818,
+        "top_emotions": [
+          [
+            "Distress",
+            0.24595903843018818
+          ],
+          [
+            "Confusion",
+            0.1852631014941893
+          ],
+          [
+            "Sadness",
+            0.16547315451330216
+          ],
+          [
+            "Excitement",
+            0.16434662078198606
+          ],
+          [
+            "Anxiety",
+            0.1628501309031578
+          ]
+        ]
+      }
+    },
+    "spk_1": {
+      "quintile_1": {
+        "time_range": "0.00-12.02s",
+        "dominant_emotion": "Emotion_8",
+        "emotion_score": 0.3347477270764663,
+        "top_emotions": [
+          [
+            "Emotion_8",
+            0.3347477270764663
+          ],
+          [
+            "Emotion_9",
+            0.24316270264423273
+          ],
+          [
+            "Emotion_7",
+            0.22083363200496123
+          ],
+          [
+            "Emotion_6",
+            0.12413214471480971
+          ],
+          [
+            "Emotion_5",
+            0.10770967900616608
+          ]
+        ]
+      },
+      "quintile_2": {
+        "time_range": "12.02-24.03s",
+        "dominant_emotion": "Distress",
+        "emotion_score": 0.3798680774002131,
+        "top_emotions": [
+          [
+            "Distress",
+            0.3798680774002131
+          ],
+          [
+            "Anxiety",
+            0.2905760976235352
+          ],
+          [
+            "Sadness",
+            0.1385640883254856
+          ],
+          [
+            "Realization",
+            0.10152891776234907
+          ],
+          [
+            "Pain",
+            0.08778984295617123
+          ]
+        ]
+      },
+      "quintile_3": {
+        "time_range": "24.03-36.05s",
+        "dominant_emotion": "Anger",
+        "emotion_score": 0.3056215302666375,
+        "top_emotions": [
+          [
+            "Anger",
+            0.3056215302666375
+          ],
+          [
+            "Distress",
+            0.2566211675990912
+          ],
+          [
+            "Disappointment",
+            0.14741518053125116
+          ],
+          [
+            "Anxiety",
+            0.14070298417007052
+          ],
+          [
+            "Confusion",
+            0.10230823908694119
+          ]
+        ]
+      },
+      "quintile_4": {
+        "time_range": "36.05-48.07s",
+        "dominant_emotion": "Distress",
+        "emotion_score": 0.3303299756678195,
+        "top_emotions": [
+          [
+            "Distress",
+            0.3303299756678195
+          ],
+          [
+            "Anxiety",
+            0.2585665664722444
+          ],
+          [
+            "Sadness",
+            0.2324273541866173
+          ],
+          [
+            "Fear",
+            0.20970481041143818
+          ],
+          [
+            "Anger",
+            0.20422677644512233
+          ]
+        ]
+      },
+      "quintile_5": {
+        "time_range": "48.07-60.09s",
+        "dominant_emotion": "Doubt",
+        "emotion_score": 0.3328787739303186,
+        "top_emotions": [
+          [
+            "Doubt",
+            0.3328787739303186
+          ],
+          [
+            "Awkwardness",
+            0.20625239022796718
+          ],
+          [
+            "Anxiety",
+            0.19446074269231295
+          ],
+          [
+            "Contemplation",
+            0.1929033844056946
+          ],
+          [
+            "Confusion",
+            0.14858142448593092
+          ]
+        ]
+      }
+    },
+    "spk_2": {
+      "quintile_2": {
+        "time_range": "12.02-24.03s",
+        "dominant_emotion": "Emotion_8",
+        "emotion_score": 0.16329411861876547,
+        "top_emotions": [
+          [
+            "Emotion_8",
+            0.16329411861876547
+          ],
+          [
+            "Emotion_5",
+            0.16306874798190824
+          ],
+          [
+            "Emotion_2",
+            0.11651439610738372
+          ],
+          [
+            "Emotion_3",
+            0.11551144631689718
+          ],
+          [
+            "Emotion_9",
+            0.11113886255444598
+          ]
+        ]
+      }
+    }
+  }
+}

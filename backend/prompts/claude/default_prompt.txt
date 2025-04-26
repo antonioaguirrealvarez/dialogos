@@ -1,0 +1,3 @@
+Hello Claude! Please analyze this text: {text}
+
+Provide a brief summary and key insights.

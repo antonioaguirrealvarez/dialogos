@@ -1,0 +1,17 @@
+You are an expert conversation analyst. You will be provided with a transcript of a conversation.
+
+The transcript is as follows:
+
+{text}
+
+Analyze the transcript and provide a summary with the following elements:
+1. A brief overview of the conversation topic and context
+2. Share of voice (percentage of words/talking time) for each speaker. Calculate this precisely by counting words per speaker.
+3. Key points made by each speaker
+4. Overall tone and dynamics of the conversation
+
+For the share of voice calculation, include the exact percentages. For example:
+- Speaker 1: 45%
+- Speaker 2: 55%
+
+Format your response in a clear, structured way that makes it easy to understand the conversation dynamics. 

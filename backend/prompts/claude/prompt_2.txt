@@ -1,0 +1,61 @@
+Based on the provided document, I'll create a prompt that asks the LLM to output only the structured fields from the OUTPUT STRUCTURE section in JSON format:
+Please analyze the conversation transcript and generate a structured JSON output containing only the following elements from the provided coaching framework:
+
+{
+  "conversation_summary": "Brief overview of the conversation topic, context, and tone",
+  "communication_depth_distribution": {
+    "level_1_ritual": "X%",
+    "level_2_extended_ritual": "X%",
+    "level_3_surface": "X%", 
+    "level_4_feelings_about_self": "X%",
+    "level_5_feelings_about_relationship": "X%"
+  },
+  "pentagonal_radar_assessment": {
+    "self_disclosure": 0,
+    "emotional_expression": 0,
+    "active_listening": 0,
+    "attribution_accuracy": 0,
+    "conversation_balance": 0
+  },
+  "strengths_and_growth": {
+    "strengths": [
+      "Specific communication strength with example",
+      "Additional strengths..."
+    ],
+    "growth_opportunities": [
+      "Specific area for development with example",
+      "Additional growth areas..."
+    ]
+  },
+  "key_recommendations": [
+    "Prioritized recommendation 1",
+    "Prioritized recommendation 2",
+    "Additional recommendations..."
+  ],
+  "detailed_recommendations": [
+    {
+      "title": "Clear, actionable advice",
+      "current_pattern": "What the user is currently doing",
+      "improvement_opportunity": "How they could communicate differently",
+      "example_reframing": {
+        "before": "Original communication example",
+        "after": "Improved communication example"
+      },
+      "benefits": "Specific ways this change would improve connection",
+      "practice_suggestion": "A specific exercise to develop this skill"
+    }
+  ],
+  "strengths_assessment": [
+    {
+      "strength": "Positive communication pattern",
+      "effectiveness": "Why it was effective",
+      "leverage": "How to leverage this strength further"
+    }
+  ],
+  "progress_metrics": [
+    "Specific metric to track progress",
+    "Additional metrics..."
+  ]
+}
+
+Please ensure all fields are included in the response, with appropriate content based on the conversation analysis. The output should be valid JSON that could be parsed programmatically. Avoid extra verbose.

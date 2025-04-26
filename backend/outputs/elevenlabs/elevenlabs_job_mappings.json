@@ -1,0 +1,8 @@
+{
+  "d10b3bf6bd2e96107ccdd4d4cda119f1": {
+    "file_path": "input_files\\sample_audio_2.m4a",
+    "processed_time": 1745709818.3141718,
+    "json_path": "outputs/elevenlabs\\sample_audio_2_transcript.json",
+    "cleaned_path": "outputs/elevenlabs\\sample_audio_2_transcript_cleaned.txt"
+  }
+}

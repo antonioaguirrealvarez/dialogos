@@ -1,0 +1,25 @@
+2025-04-26 15:38:04,924 - INFO - Claude API client initialized
+2025-04-26 15:38:04,924 - INFO - Reading transcript file: outputs/elevenlabs/sample_audio_transcript_cleaned.txt
+2025-04-26 15:38:04,924 - INFO - Analyzing conversation for summary and share of voice...
+2025-04-26 15:38:04,924 - INFO - Sending request to Claude with 13680 characters of text
+2025-04-26 15:38:18,282 - INFO - Successfully received response from Claude
+2025-04-26 15:38:18,282 - INFO - Analyzing conversation for sentiment...
+2025-04-26 15:38:18,282 - ERROR - Error processing transcript with Claude: '\n  "overall_sentiment"'
+2025-04-26 17:27:10,869 - INFO - Initializing Claude processor
+2025-04-26 17:27:10,870 - INFO - Claude API client initialized
+2025-04-26 17:27:10,870 - INFO - Processing quintile emotions for: outputs/processed/sample_audio_2_quintile_analysis.json
+2025-04-26 17:27:10,871 - INFO - Processing quintile analysis: sample_audio_2_quintile_analysis
+2025-04-26 17:27:10,871 - INFO - Emotions analysis will be saved to: outputs/claude\sample_audio_2_emotions_analysis.json
+2025-04-26 17:27:10,871 - INFO - Reading quintile analysis file: outputs/processed/sample_audio_2_quintile_analysis.json
+2025-04-26 17:27:10,872 - INFO - Processing quintile analysis with Claude for emotion extraction...
+2025-04-26 17:27:10,872 - INFO - Sending request to Claude with 6711 characters of text
+2025-04-26 17:27:16,879 - INFO - Successfully received response from Claude
+2025-04-26 17:27:16,879 - INFO - Emotions analysis saved to outputs/claude\sample_audio_2_emotions_analysis.json
+2025-04-26 17:27:16,879 - INFO - Emotions analysis completed successfully
+2025-04-26 17:27:16,879 - INFO - Emotions analysis file: outputs/claude\sample_audio_2_emotions_analysis.json
+2025-04-26 17:27:16,879 - INFO - Found 10 emotion entries
+2025-04-26 17:27:16,879 - INFO - Entry 1: Speaker: spk_0, Quintile: 1, Emotion: Awe
+2025-04-26 17:27:16,879 - INFO - Entry 2: Speaker: spk_0, Quintile: 2, Emotion: Joy
+2025-04-26 17:27:16,879 - INFO - Entry 3: Speaker: unknown, Quintile: 1, Emotion: Joy
+2025-04-26 17:27:16,879 - INFO - Entry 4: Speaker: unknown, Quintile: 2, Emotion: Distress
+2025-04-26 17:27:16,879 - INFO - Entry 5: Speaker: spk_1, Quintile: 1, Emotion: Emotion_8

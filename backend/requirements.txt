@@ -1,0 +1,9 @@
+requests==2.31.0
+python-dotenv==1.0.0
+pandas==2.1.0
+matplotlib==3.8.0
+numpy==1.26.0
+tqdm==4.66.1
+logging==0.4.9.6
+regex==2023.8.8
+anthropic==0.5.0 

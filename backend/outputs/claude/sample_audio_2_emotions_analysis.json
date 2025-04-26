@@ -1,0 +1,52 @@
+[
+  {
+    "speaker": "spk_0",
+    "quintile": 1,
+    "main_emotion": "Awe"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 2,
+    "main_emotion": "Joy"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 3,
+    "main_emotion": "Anger"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 4,
+    "main_emotion": "Doubt"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 5,
+    "main_emotion": "Sadness"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 1,
+    "main_emotion": "Distress"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 2,
+    "main_emotion": "Distress"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 3,
+    "main_emotion": "Anger"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 4,
+    "main_emotion": "Happiness"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 5,
+    "main_emotion": "Joy"
+  }
+]

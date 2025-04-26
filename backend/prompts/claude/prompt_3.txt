@@ -1,0 +1,21 @@
+Please convert the attached emotion analysis data into a simplified JSON format that includes only three fields for each speaker and quintile:
+1. speaker - the speaker identifier
+2. quintile - the quintile number
+3. main_emotion - the dominant emotion in that quintile
+
+The output should be a JSON array where each object contains these three fields. For example:
+[
+  {
+    "speaker": "spk_0",
+    "quintile": 1,
+    "main_emotion": "Awe"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 2,
+    "main_emotion": "Joy"
+  },
+  ...
+]
+
+Please ensure the output is valid JSON that could be parsed by standard JSON parsers. Avoid extra verbose
