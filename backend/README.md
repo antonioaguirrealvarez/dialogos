@@ -212,4 +212,278 @@ python tests/test_claude.py --file path/to/transcript.txt
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# Audio Analysis API - Integration Guide
+
+This guide provides detailed information on how to integrate the frontend application with the audio analysis backend API.
+
+## API Overview
+
+The API provides endpoints for:
+1. Uploading and processing audio files or transcripts
+2. Checking the status of processing jobs
+3. Retrieving analysis results when processing is complete
+
+All API endpoints return JSON responses, and the server runs on `http://localhost:8000` by default.
+
+## API Endpoints Schema
+
+### Base URL
+```
+http://localhost:8000
+```
+
+### Health Check
+```
+GET /
+
+Response:
+{
+  "message": "Audio Analysis API is running"
+}
+```
+
+### Process Audio or Transcript File
+```
+POST /process
+
+Request:
+- Content-Type: multipart/form-data
+- Body: file (file upload)
+
+Response:
+{
+  "job_id": "string (UUID format)",
+  "status": "processing",
+  "message": "string"
+}
+```
+
+### Process Text Directly
+```
+POST /process-text
+
+Request:
+- Content-Type: application/x-www-form-urlencoded
+- Body: text (string)
+
+Response:
+{
+  "job_id": "string (UUID format)",
+  "status": "processing",
+  "message": "string"
+}
+```
+
+### Check Processing Status
+```
+GET /status/{job_id}
+
+Path Parameter:
+- job_id: string (UUID format)
+
+Response:
+{
+  "job_id": "string (UUID format)",
+  "status": "processing | completed | failed",
+  "results": {} (optional, present only when status is "completed")
+}
+```
+
+### Get Analysis Results
+```
+GET /results/{job_id}
+
+Path Parameter:
+- job_id: string (UUID format)
+
+Response:
+{
+  "structured_analysis": {
+    "raw_text": "string",
+    "processed_at": "string (ISO format datetime)",
+    "conversation_summary": "string",
+    "communication_depth_distribution": {}
+    // Additional fields from Claude structured analysis
+  },
+  "emotions_analysis": [
+    {
+      "speaker": "string",
+      "quintile": "number",
+      "main_emotion": "string"
+    }
+    // Additional speaker emotion data
+  ]
+}
+```
+
+## Integration Flow
+
+Here's how to integrate this API with your frontend:
+
+### 1. Upload File or Text
+
+For file uploads:
+```javascript
+// Example using fetch API
+async function uploadFile(file) {
+  const formData = new FormData();
+  formData.append('file', file);
+  
+  const response = await fetch('http://localhost:8000/process', {
+    method: 'POST',
+    body: formData
+  });
+  
+  const data = await response.json();
+  return data.job_id; // Save this to check status later
+}
+```
+
+For text input:
+```javascript
+// Example using fetch API
+async function uploadText(text) {
+  const formData = new FormData();
+  formData.append('text', text);
+  
+  const response = await fetch('http://localhost:8000/process-text', {
+    method: 'POST',
+    body: formData
+  });
+  
+  const data = await response.json();
+  return data.job_id; // Save this to check status later
+}
+```
+
+### 2. Poll for Status
+
+```javascript
+// Example polling function
+async function checkStatus(jobId) {
+  const response = await fetch(`http://localhost:8000/status/${jobId}`);
+  const data = await response.json();
+  return data.status; // "processing", "completed", or "failed"
+}
+
+// Polling implementation
+async function pollUntilComplete(jobId, interval = 5000) {
+  return new Promise((resolve, reject) => {
+    const checkInterval = setInterval(async () => {
+      try {
+        const status = await checkStatus(jobId);
+        if (status === "completed") {
+          clearInterval(checkInterval);
+          resolve(status);
+        } else if (status === "failed") {
+          clearInterval(checkInterval);
+          reject(new Error("Processing failed"));
+        }
+      } catch (error) {
+        clearInterval(checkInterval);
+        reject(error);
+      }
+    }, interval);
+  });
+}
+```
+
+### 3. Get Results When Complete
+
+```javascript
+// Example to fetch results
+async function getResults(jobId) {
+  const response = await fetch(`http://localhost:8000/results/${jobId}`);
+  return await response.json();
+}
+
+// Complete flow
+async function processAndGetResults(file) {
+  try {
+    // Step 1: Upload file
+    const jobId = await uploadFile(file);
+    
+    // Step 2: Poll until complete (with UI updates)
+    await pollUntilComplete(jobId);
+    
+    // Step 3: Get and display results
+    const results = await getResults(jobId);
+    displayResults(results);
+  } catch (error) {
+    console.error("Error processing file:", error);
+    // Show error in UI
+  }
+}
+```
+
+## Response Object Examples
+
+### Example Structured Analysis
+
+```json
+{
+  "raw_text": "# Communication Analysis Report\n\n## 1. Conversation Summary\nThis brief conversation occurs between three speakers...",
+  "processed_at": "2025-04-26T17:24:28.649226",
+  "conversation_summary": "This brief conversation occurs between three speakers in what appears to be a hackathon setting...",
+  "communication_depth_distribution": {}
+}
+```
+
+### Example Emotions Analysis
+
+```json
+[
+  {
+    "speaker": "spk_0",
+    "quintile": 1,
+    "main_emotion": "Awe"
+  },
+  {
+    "speaker": "spk_0",
+    "quintile": 2,
+    "main_emotion": "Joy"
+  },
+  {
+    "speaker": "spk_1",
+    "quintile": 1,
+    "main_emotion": "Distress"
+  }
+]
+```
+
+## Error Handling
+
+The API returns standard HTTP error codes:
+- 400: Bad Request (e.g., invalid input)
+- 404: Not Found (e.g., job ID doesn't exist)
+- 500: Internal Server Error
+
+Error responses include a detail message:
+```json
+{
+  "detail": "Error message describing the issue"
+}
+```
+
+## CORS Configuration
+
+The API includes CORS configuration that allows requests from any origin, which is suitable for development. For production, you may want to restrict the allowed origins.
+
+## Using Swagger Documentation
+
+The API includes interactive Swagger documentation at `http://localhost:8000/docs`, which can be helpful during development for testing endpoints.
+
+## Supported File Types
+
+- **Audio files**: `.wav`, `.mp3`, `.m4a`, `.aac`, `.ogg`, `.flac`
+- **Transcript files**: `.txt`, `.md`, `.json`
+
+## Processing Times
+
+Note that processing times vary based on file size and server load:
+- Text transcripts typically process within 1-2 minutes
+- Audio files may take 3-5+ minutes depending on length and complexity
+
+Your frontend should include appropriate loading indicators or progress updates while waiting for results. 
